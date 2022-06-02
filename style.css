@@ -31,12 +31,11 @@ h1 {
 }
 .bookGrid {
   flex: 1;
+  /*! REMOVE THIS ! */
   border: 1px solid blue;
   width: 95vw;
 }
-.addBook,
-.readBook,
-.deleteBook, .submitButton {
+button {
   margin: 1vh 0;
   /* From uiverse.io */
   font-size: 1rem;
@@ -49,6 +48,10 @@ h1 {
   transition: all 0.2s ease 0s;
   cursor: pointer;
 }
+.backButton {
+  margin-right: auto;
+  padding: 0.5em 0.5em;
+}
 .readBook {
   background-color: #13e913;
   color: white;
@@ -56,35 +59,34 @@ h1 {
 .unfinished {
   background-color: #d81919;
 }
-.addBook:hover,
-.deleteBook:hover,
-.readBook:hover, .submitButton:hover{
+button:hover {
   box-shadow: 0px 15px 20px rgba(110, 110, 110, 0.4);
   color: #fff;
   transform: translateY(-0.5vh);
 }
-.addBook:hover, .submitButton:hover {
+.addBook:hover,
+.submitButton:hover {
   background-color: #0a2b38;
 }
-.deleteBook:hover {
+.deleteBook:hover,
+.readBook:hover,
+.backButton:hover {
   background-color: #d81919;
 }
-.readBook:hover {
-  background-color: #d81919;
-}
-.unfinished:hover,{
+.unfinished:hover {
   background-color: #13e913;
 }
 .addBook {
   padding: 1.3em 1em;
 }
 .readBook,
-.deleteBook, .submitButton {
+.deleteBook,
+.submitButton {
   padding: 1em 0.5em;
 }
 .addBook:active,
 .readBook:active,
-.deleteBook:active .submitButton:active{
+.deleteBook:active {
   transform: translateY(0.1vh);
 }
 /* Book container css*/
@@ -105,15 +107,14 @@ h1 {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.25);
-    transform: translate(0, 0) scale(0);
-  transition: 0.25s ease-in-out;
-
-}
-.modalActive {
+  transform: translate(0, 0) scale(0);
+  transition: 0.3s ease;
   display: flex;
-    transform: translate(0, 0) scale(1);
   align-items: center;
   justify-content: space-around;
+}
+.modalActive {
+  transform: translate(0, 0) scale(1);
 }
 .modal {
   background-color: #ffffff94;
@@ -123,9 +124,8 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
-.bookForm{
+.bookForm {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
