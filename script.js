@@ -40,7 +40,7 @@ const displayBooks = (book) => {
   deleteBook.classList.add("deleteBook");
   /* TODO: ADD READBOOK AND DELETEBOOK BELOW*/
   readBook.onclick = toggleFinished;
-  //   deleteBook.onclick = removeBook
+  deleteBook.onclick = deleteBooks;
 
   bookTitle.textContent = `"${book.title}"`;
   bookAuthor.textContent = `By ${book.author}`;
@@ -74,6 +74,11 @@ const toggleFinished = (e) => {
     console.log(book);
   updateBooks();
 };
+const deleteBooks = (e) => {
+     const bookTitle = e.target.parentNode.firstChild.innerHTML.slice(1, -1);
+     myLibrary = myLibrary.filter((book) => book.title !== bookTitle);
+     updateBooks();
+}
 function makeBook() {
   const title = document.getElementById("title").value;
   const author = document.getElementById("author").value;
