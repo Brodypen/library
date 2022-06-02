@@ -14,11 +14,26 @@
     </header>
     <main class="main">
         <button class="addBook">Add Book</button>
+        <div class="modalContainer modalActive">
+            <div class="modal">
+                <h3>Add a Book!</h3>
+                <form class="bookForm">
+                    <div><input type="text" class="input" id="title" placeholder="Title" required></div>
+                    <div><input type="text" class="input" id="author" placeholder="Author" required></div>
+                    <div><input type="number" class="input" id="pages" placeholder="Pages" required min="0"></div>
+                    <div class="isFinishedContainer">
+                        <label class="finishedText" for="isFinished">Have you finished it?</label>
+                        <input type="checkbox" class="checkbox" id="isFinished">
+                    </div>
+                    <button class="submitButton" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
         <div class="bookGrid">
             <div class="bookContainer">
-                <p class="title">HEy </p>
-                <p class="author">BRody</p>
-                <p class="pages">10</p>
+                <p class="bookTitle">Hey </p>
+                <p class="bookAuthor">Brody</p>
+                <p class="bookPages">10</p>
                 <button class="readBook">Finished</button>
                 <button class="deleteBook">Delete</button>
             </div>

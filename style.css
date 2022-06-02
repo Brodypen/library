@@ -14,7 +14,8 @@ body {
 h1 {
   font-size: 2.5rem;
   margin: 0;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 .main {
   background-color: #cbcbcb;
@@ -33,7 +34,9 @@ h1 {
   border: 1px solid blue;
   width: 95vw;
 }
-.addBook, .readBook, .deleteBook {
+.addBook,
+.readBook,
+.deleteBook, .submitButton {
   margin: 1vh 0;
   /* From uiverse.io */
   font-size: 1rem;
@@ -48,12 +51,14 @@ h1 {
 }
 .readBook {
   background-color: #13e913;
-  color:white;
+  color: white;
 }
 .unfinished {
   background-color: #d81919;
 }
-.addBook:hover, .deleteBook:hover, .readBook:hover{
+.addBook:hover,
+.deleteBook:hover,
+.readBook:hover {
   box-shadow: 0px 15px 20px rgba(110, 110, 110, 0.4);
   color: #fff;
   transform: translateY(-0.5vh);
@@ -67,16 +72,19 @@ h1 {
 .readBook:hover {
   background-color: #d81919;
 }
-.unfinished:hover{
+.unfinished:hover {
   background-color: #13e913;
 }
 .addBook {
-  padding: 1.3em 1.0em;
+  padding: 1.3em 1em;
 }
-.readBook, .deleteBook{
+.readBook,
+.deleteBook, .submitButton {
   padding: 1em 0.5em;
 }
-.addBook:active, .readBook:active, .deleteBook:active {
+.addBook:active,
+.readBook:active,
+.deleteBook:active .submitButton:active{
   transform: translateY(0.1vh);
 }
 /* Book container css*/
@@ -86,5 +94,62 @@ h1 {
   background-color: white;
   width: max(200px, 10vw);
   border: 1vw solid white;
-  border-radius: max(25px,1.5vw);
+  border-radius: max(25px, 1.5vw);
+}
+.modalContainer {
+  position: fixed;
+  z-index: 1;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.25);
+  display: none;
+}
+.modalActive {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.modal {
+  background-color: #ffffff94;
+  padding: max(50px, 1vw);
+  border: 4px solid white;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.bookForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 5vh;
+}
+.input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 1.5rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-radius: 20px;
+  padding-left: 0.5rem;
+}
+h3 {
+  font-size: 2rem;
+  margin: 0 0 3vh 0;
+}
+.isFinishedContainer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.finishedText {
+  font-size: 1.25rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.checkbox {
+  width: 2rem;
+  height: 2rem;
 }
