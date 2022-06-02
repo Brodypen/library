@@ -31,9 +31,12 @@ h1 {
 }
 .bookGrid {
   flex: 1;
-  /*! REMOVE THIS ! */
-  border: 1px solid blue;
-  width: 95vw;
+  width: 90vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-rows: 1fr 1fr;
+  gap: 5vw;
+  justify-items: center;
 }
 button {
   margin: 1vh 0;
@@ -156,4 +159,11 @@ h3 {
 .checkbox {
   width: 2rem;
   height: 2rem;
+}
+.credit {
+  font-size: 1.5rem;
+  color: blue;  
+}
+a {
+  color: blue;
 }

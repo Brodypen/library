@@ -15,7 +15,6 @@ class Book {
     this.finished = finished;
   }
 }
-
 const addBook = (e) => {
   e.preventDefault();
   const book = makeBook();
@@ -24,7 +23,6 @@ const addBook = (e) => {
   updateBooks();
 };
 const displayBooks = (book) => {
-  console.log(book);
   const bookContainer = document.createElement("div");
   const bookTitle = document.createElement("p");
   const bookAuthor = document.createElement("p");
@@ -38,14 +36,12 @@ const displayBooks = (book) => {
   bookPages.classList.add("bookPages");
   readBook.classList.add("readBook");
   deleteBook.classList.add("deleteBook");
-  /* TODO: ADD READBOOK AND DELETEBOOK BELOW*/
   readBook.onclick = toggleFinished;
   deleteBook.onclick = deleteBooks;
 
   bookTitle.textContent = `"${book.title}"`;
   bookAuthor.textContent = `By ${book.author}`;
   bookPages.textContent = `${book.pages} Pages`;
-  console.log(book.finished);
   if (book.finished) {
     readBook.textContent = "Finished";
   } else {
@@ -71,7 +67,6 @@ const toggleFinished = (e) => {
   const bookTitle = e.target.parentNode.firstChild.innerHTML.slice(1,-1);
     const book = myLibrary.find(book => book.title === bookTitle);
     book.finished = !book.finished;
-    console.log(book);
   updateBooks();
 };
 const deleteBooks = (e) => {
@@ -98,3 +93,4 @@ function activeModal() {
 addBookButton.addEventListener("click", activeModal);
 backButton.addEventListener("click", unactiveModal);
 bookForm.addEventListener("submit", addBook);
+updateBooks();
