@@ -58,12 +58,12 @@ h1 {
 }
 .addBook:hover,
 .deleteBook:hover,
-.readBook:hover {
+.readBook:hover, .submitButton:hover{
   box-shadow: 0px 15px 20px rgba(110, 110, 110, 0.4);
   color: #fff;
   transform: translateY(-0.5vh);
 }
-.addBook:hover {
+.addBook:hover, .submitButton:hover {
   background-color: #0a2b38;
 }
 .deleteBook:hover {
@@ -72,7 +72,7 @@ h1 {
 .readBook:hover {
   background-color: #d81919;
 }
-.unfinished:hover {
+.unfinished:hover,{
   background-color: #13e913;
 }
 .addBook {
@@ -105,10 +105,13 @@ h1 {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.25);
-  display: none;
+    transform: translate(0, 0) scale(0);
+  transition: 0.25s ease-in-out;
+
 }
 .modalActive {
   display: flex;
+    transform: translate(0, 0) scale(1);
   align-items: center;
   justify-content: space-around;
 }
@@ -120,6 +123,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 .bookForm{
   display: flex;
